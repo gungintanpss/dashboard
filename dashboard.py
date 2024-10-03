@@ -8,7 +8,9 @@ sns.set(style='dark')
 
 main_df = pd.read_csv("main_data.csv")
 
-payment_cancel_count = main_df[['payment_type', 'order_status']].groupby('payment_type').agg(canceled_count=('order_status', lambda x: (x == 'canceled').sum())).reset_index()
+payment_cancel_count = main_df[['payment_type', 'order_status']].groupby('payment_type').agg(
+    canceled_count=('order_status', lambda x: (x == 'canceled').sum())
+).reset_index()
 payment_cancel_count_sorted = payment_cancel_count.sort_values(by="canceled_count", ascending=False)
 
 delivery_counts = main_df['delivery_status'].value_counts().reset_index()
@@ -58,6 +60,7 @@ plt.ylabel(None)
 plt.xlabel(None)
 plt.tick_params(axis='y', labelsize=12)
 st.pyplot(plt)
+
 
 plt.figure(figsize=(8, 8))
 plt.pie(
