@@ -33,7 +33,7 @@ plt.ylabel('Jumlah Pembatalan', fontsize=14)
 plt.tick_params(axis='x', labelsize=12)
 plt.xticks(rotation=45, fontsize=12)
 plt.yticks(fontsize=12)
-st.pyplot(plt)
+st.pyplot(fig)  
 
 plt.figure(figsize=(10, 10))
 plt.pie(payment_cancel_count['canceled_count'], 
@@ -43,7 +43,7 @@ plt.pie(payment_cancel_count['canceled_count'],
         colors=plt.cm.Paired.colors)
 plt.title('Pembatalan Pesanan Berdasarkan Metode Pembayaran', fontsize=20)
 plt.axis('equal')  
-st.pyplot(plt)
+st.pyplot() 
 
 st.subheader("Jumlah Pengiriman Berdasarkan Status Pengiriman")
 
@@ -59,8 +59,7 @@ plt.title("Jumlah Pengiriman Berdasarkan Status Pengiriman", loc="center", fonts
 plt.ylabel(None)
 plt.xlabel(None)
 plt.tick_params(axis='y', labelsize=12)
-st.pyplot(plt)
-
+st.pyplot() 
 
 plt.figure(figsize=(8, 8))
 plt.pie(
@@ -77,4 +76,4 @@ fig.gca().add_artist(centre_circle)
 
 plt.title("Prosentase Pengiriman Berdasarkan Status Pengiriman", fontsize=15, loc='center', pad=20) 
 plt.axis('equal')  
-st.pyplot(plt)
+st.pyplot()  
